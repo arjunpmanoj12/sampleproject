@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Books</title>
+  <link rel="stylesheet" href="./css/booklisting.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Donate</a></li>
+        <li><a href="#">Sell</a></li>
+        <li><a href="#">Search Books</a></li>
+        <li><a href="#">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="search-section">
+      <h1>Search for Books</h1>
+      <input type="text" id="search-box" placeholder="Search by title, author, or category">
+      <button onclick="searchBooks()">Search</button>
+      
+      <div class="filter-section">
+        <label for="condition">Condition:</label>
+        <select id="condition-filter" onchange="filterBooks()">
+          <option value="">All</option>
+          <option value="new">New</option>
+          <option value="good">Good</option>
+          <option value="fair">Fair</option>
+          <option value="poor">Poor</option>
+        </select>
+
+        <label for="category">Category:</label>
+        <select id="category-filter" onchange="filterBooks()">
+          <option value="">All</option>
+          <option value="fiction">Fiction</option>
+          <option value="non-fiction">Non-Fiction</option>
+          <option value="educational">Educational</option>
+          <option value="children">Children's Books</option>
+        </select>
+      </div>
+
+      <div id="book-results" class="book-grid">
+        <!-- Search results will appear here -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 BookShare. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function searchBooks() {
+      // JS code for searching and filtering books
+    }
+
+    function filterBooks() {
+      // JS code for filtering books based on conditions and category
+    }
+  </script>
+</body>
+</html>
