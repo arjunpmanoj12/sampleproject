@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  {% load static %}  <!-- Load the static files tag library -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Search Books</title>
-  <link rel="stylesheet" href="./css/booklisting.css">
-  <script src="script.js" defer></script>
+  <!-- Update the CSS link to use Django's static tag -->
+  <link rel="stylesheet" href="{% static 'css/booklisting.css' %}">
+  <!-- Update the JS script to use Django's static tag -->
+  <script src="{% static 'js/script.js' %}" defer></script>
 </head>
 <body>
   <header>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Donate</a></li>
-        <li><a href="#">Sell</a></li>
-        <li><a href="#">Search Books</a></li>
-        <li><a href="#">Profile</a></li>
+        <!-- You can replace href attributes with Django URL template tags if needed -->
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'sell' %}">Sell Books</a></li>
+        <li><strong><a href="{% url 'buy' %}">Buy Books</a></strong></li>
+        <li><a href="{% url 'profile' %}">Profile</a></li>
       </ul>
     </nav>
   </header>
@@ -50,6 +53,26 @@
         <!-- Search results will appear here -->
       </div>
     </section>
+
+    <h1>Book Gallery</h1>
+    <div class="gallery">
+      <div class="book">
+        <img src="https://via.placeholder.com/250x350" alt="Book Cover">
+        <div class="book-title">Book Title 1</div>
+        <div class="book-description">This is a description of Book Title 1. It provides an overview of the book's content and themes.</div>
+      </div>
+      <div class="book">
+        <img src="https://via.placeholder.com/250x350" alt="Book Cover">
+        <div class="book-title">Book Title 2</div>
+        <div class="book-description">This is a description of Book Title 2. It covers key points and interesting aspects of the book.</div>
+      </div>
+      <div class="book">
+        <img src="https://via.placeholder.com/250x350" alt="Book Cover">
+        <div class="book-title">Book Title 3</div>
+        <div class="book-description">This is a description of Book Title 3. Learn about its characters and plot twists.</div>
+      </div>
+      <!-- Add more books here -->
+    </div>
   </main>
 
   <footer>

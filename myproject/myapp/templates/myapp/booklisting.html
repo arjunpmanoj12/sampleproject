@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Books</title>
+  <!-- Update the path for CSS -->
+  <link rel="stylesheet" href="{% static 'css/booklisting.css' %}">
+  <!-- Update the path for JS -->
+  <script src="{% static 'js/script.js' %}" defer></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <!-- Link paths can also be handled through Django URLs if needed -->
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'sell' %}">Sell Books</a></li>
+        <li><strong><a href="{% url 'buy' %}">Buy Books</a></strong></li>
+        <li><a href="{% url 'profile' %}">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="search-section">
+      <h1>Search for Books</h1>
+      <input type="text" id="search-box" placeholder="Search by title, author, or category">
+      <button onclick="searchBooks()">Search</button>
+      
+      <div class="filter-section">
+        <label for="condition">Condition:</label>
+        <select id="condition-filter" onchange="filterBooks()">
+          <option value="">All</option>
+          <option value="new">New</option>
+          <option value="good">Good</option>
+          <option value="fair">Fair</option>
+          <option value="poor">Poor</option>
+        </select>
+
+        <label for="category">Category:</label>
+        <select id="category-filter" onchange="filterBooks()">
+          <option value="">All</option>
+          <option value="fiction">Fiction</option>
+          <option value="non-fiction">Non-Fiction</option>
+          <option value="educational">Educational</option>
+          <option value="children">Children's Books</option>
+        </select>
+      </div>
+
+      <div id="book-results" class="book-grid">
+        <!-- Search results will appear here -->
+      </div>
+    </section>
+    <h1>Book Gallery</h1>
+
+    <div class="gallery">
+      <!-- Dynamically render book items here if needed -->
+        <div class="book">
+            <img src="https://via.placeholder.com/250x350" alt="Book Cover">
+            <div class="book-title">Book Title 1</div>
+            <div class="book-description">This is a description of Book Title 1. It provides an overview of the book's content and themes.</div>
+        </div>
+        <div class="book">
+            <img src="https://via.placeholder.com/250x350" alt="Book Cover">
+            <div class="book-title">Book Title 2</div>
+            <div class="book-description">This is a description of Book Title 2. It covers key points and interesting aspects of the book.</div>
+        </div>
+        <div class="book">
+            <img src="https://via.placeholder.com/250x350" alt="Book Cover">
+            <div class="book-title">Book Title 3</div>
+            <div class="book-description">This is a description of Book Title 3. Learn about its characters and plot twists.</div>
+        </div>
+        <!-- Add more books here -->
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2024 BookShare. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function searchBooks() {
+      // JS code for searching and filtering books
+    }
+
+    function filterBooks() {
+      // JS code for filtering books based on conditions and category
+    }
+  </script>
+</body>
+</html>

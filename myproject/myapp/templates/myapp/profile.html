@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}  <!-- Load the static files tag library -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Book Donation/Selling</title>
+    <!-- Use the static tag to load your CSS file -->
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+</head>
+<body>
+
+<header>
+    <nav>
+      <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'sell' %}">Sell Books</a></li>
+        <li><a href="{% url 'buy' %}">Buy Books</a></li>
+        <li><strong><a href="{% url 'profile' %}">Profile</a></strong></li>
+      </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="profile-section">
+        <div class="profile-card">
+            <div class="profile-header">
+                <img src="{% static 'images/profile-pic.jpg' %}" alt="User Profile Picture">
+                <h2>{{ user.username }}</h2>
+                <p class="user-email">{{ user.email }}</p>
+            </div>
+            <div class="profile-actions">
+                <a href="#" class="btn-edit">Edit Profile</a>
+                <a href="#" class="btn-logout">Logout</a>
+            </div>
+        </div>
+        
+        <div class="book-list-section">
+            <h2>My Listed Books</h2>
+            <div class="book-grid">
+                <div class="book-card">
+                    <img src="{% static 'images/book1.jpg' %}" alt="Book 1">
+                    <h3>The Great Gatsby</h3>
+                    <p>Condition: Like New</p>
+                </div>
+                <div class="book-card">
+                    <img src="{% static 'images/book2.jpg' %}" alt="Book 2">
+                    <h3>To Kill a Mockingbird</h3>
+                    <p>Condition: Used</p>
+                </div>
+                <div class="book-card">
+                    <img src="{% static 'images/book3.jpg' %}" alt="Book 3">
+                    <h3>1984</h3>
+                    <p>Condition: Like New</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Book Donation/Selling Website. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

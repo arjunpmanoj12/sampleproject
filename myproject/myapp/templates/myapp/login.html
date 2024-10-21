@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}  <!-- Load the static files tag library -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Book Donation/Selling</title>
+    <!-- Use Django's static tag for CSS -->
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <!-- Update the URLs with Django's URL template tags -->
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'sell' %}">Sell Books</a></li>
+            <li><a href="{% url 'buy' %}">Buy Books</a></li>
+            <li><strong><a href="{% url 'profile' %}">Profile</a></strong></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="login-section">
+        <h2>Login</h2>
+        <!-- The form action should point to a login handling view -->
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p><a href="{% url 'register' %}">Don't have an account? Register here</a></p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Book Donation/Selling Website. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
