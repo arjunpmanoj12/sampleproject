@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate a Book</title>
+  <link rel="stylesheet" href="./css/donation.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Donate</a></li>
+        <li><a href="#">Sell</a></li>
+        <li><a href="#">Search Books</a></li>
+        <li><a href="#">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <h1>Donate a Book</h1>
+      <form id="donate-book-form">
+        <label for="title">Book Title:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" required>
+
+        <label for="condition">Condition:</label>
+        <select id="condition" name="condition">
+          <option value="new">New</option>
+          <option value="good">Good</option>
+          <option value="fair">Fair</option>
+          <option value="poor">Poor</option>
+        </select>
+
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+          <option value="fiction">Fiction</option>
+          <option value="non-fiction">Non-Fiction</option>
+          <option value="educational">Educational</option>
+          <option value="children">Children's Books</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="image">Upload Book Cover:</label>
+        <input type="file" id="image" name="image">
+
+        <button type="submit" class="btn-submit">Submit Donation</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 BookShare. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

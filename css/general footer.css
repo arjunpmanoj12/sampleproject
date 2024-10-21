@@ -1,0 +1,49 @@
+/* Navigation */
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+  }
+  
+  nav ul {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: white;
+  }
+  @media (max-width: 768px) {
+    .book-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .filter-section {
+      flex-direction: column;
+    }
+  
+    #search-box {
+      width: 100%;
+    }
+  }
+  
